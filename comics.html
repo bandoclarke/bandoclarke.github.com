@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Relatable developer comics and programming situations illustrated. Every developer's daily struggles in comic form!">
+    <title>Dev Comics | CodeLaughs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-color: #eee;
+            --card-bg: #0f3460;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(15, 52, 96, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--highlight-color); }
+        .page-header {
+            text-align: center;
+            padding: 3rem 20px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        .comic-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        .comic-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .comic-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .comic-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .panel-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .panel-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .comic-description {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        .apparel-banner {
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff4757 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+        .apparel-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--highlight-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        footer {
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--highlight-color);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 {
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+        .footer-section ul { list-style: none; }
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover { color: var(--highlight-color); }
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        .social-icon:hover {
+            background: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .copyright a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .comic-strip { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">😂 CodeLaughs</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="memes.html">Memes</a></li>
+                    <li><a href="jokes.html">Jokes</a></li>
+                    <li><a href="errors.html">Epic Errors</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>📱 Developer Comics</h1>
+        <p>Life as a developer, illustrated</p>
+    </section>
+
+    <main class="container">
+        <!-- Comic 1 -->
+        <div class="comic-card">
+            <h2 class="comic-title">The Debugging Process</h2>
+            <div class="comic-strip">
+                <div class="comic-panel" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="panel-emoji">🤔</div>
+                    <div class="panel-text">"Hmm, this doesn't work..."</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="panel-emoji">😤</div>
+                    <div class="panel-text">"Let me add some console.log()"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="panel-emoji">🤯</div>
+                    <div class="panel-text">"Wait, THAT'S where it breaks?!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="panel-emoji">😅</div>
+                    <div class="panel-text">"Oh... I forgot a semicolon"</div>
+                </div>
+            </div>
+            <p class="comic-description">The eternal debugging cycle that we all know too well</p>
+        </div>
+
+        <!-- Comic 2 -->
+        <div class="comic-card">
+            <h2 class="comic-title">Code Review Experience</h2>
+            <div class="comic-strip">
+                <div class="comic-panel" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    <div class="panel-emoji">😎</div>
+                    <div class="panel-text">"Just submitted my perfect code for review"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
+                    <div class="panel-emoji">📧</div>
+                    <div class="panel-text">"47 comments from senior dev"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    <div class="panel-emoji">💀</div>
+                    <div class="panel-text">"Everything must be rewritten"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333;">
+                    <div class="panel-emoji">😢</div>
+                    <div class="panel-text">"*questioning life choices*"</div>
+                </div>
+            </div>
+            <p class="comic-description">Every junior dev's code review nightmare</p>
+        </div>
+
+        <!-- Comic 3 -->
+        <div class="comic-card">
+            <h2 class="comic-title">The Production Deploy</h2>
+            <div class="comic-strip">
+                <div class="comic-panel">
+                    <div class="panel-emoji">✅</div>
+                    <div class="panel-text">"Everything tested locally. Ready to deploy!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="panel-emoji">🚀</div>
+                    <div class="panel-text">"Deploying to production..."</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    <div class="panel-emoji">🔥</div>
+                    <div class="panel-text">"Site is down! Errors everywhere!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="panel-emoji">🏃</div>
+                    <div class="panel-text">"ROLLBACK! ROLLBACK!"</div>
+                </div>
+            </div>
+            <p class="comic-description">"It works on my machine" - Famous last words</p>
+        </div>
+
+        <!-- Comic 4 -->
+        <div class="comic-card">
+            <h2 class="comic-title">Meetings vs Coding Time</h2>
+            <div class="comic-strip">
+                <div class="comic-panel" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="panel-emoji">☀️</div>
+                    <div class="panel-text">"Monday morning, ready to code!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    <div class="panel-emoji">📅</div>
+                    <div class="panel-text">"Meeting at 10 AM"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
+                    <div class="panel-emoji">📅</div>
+                    <div class="panel-text">"Another meeting at 2 PM"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333;">
+                    <div class="panel-emoji">🌙</div>
+                    <div class="panel-text">"5 PM: Finally time to code! Oh wait, it's time to go home..."</div>
+                </div>
+            </div>
+            <p class="comic-description">The struggle of the modern developer</p>
+        </div>
+
+        <!-- Comic 5 -->
+        <div class="comic-card">
+            <h2 class="comic-title">Learning a New Framework</h2>
+            <div class="comic-strip">
+                <div class="comic-panel">
+                    <div class="panel-emoji">🤓</div>
+                    <div class="panel-text">"This new framework looks interesting!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="panel-emoji">📚</div>
+                    <div class="panel-text">"3000 pages of documentation..."</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    <div class="panel-emoji">😵</div>
+                    <div class="panel-text">"Wait, they just released version 2.0 that changes everything"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="panel-emoji">🤷</div>
+                    <div class="panel-text">"Back to vanilla JavaScript..."</div>
+                </div>
+            </div>
+            <p class="comic-description">JavaScript fatigue is real</p>
+        </div>
+
+        <!-- Comic 6 -->
+        <div class="comic-card">
+            <h2 class="comic-title">Copy-Paste from Stack Overflow</h2>
+            <div class="comic-strip">
+                <div class="comic-panel" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    <div class="panel-emoji">🔍</div>
+                    <div class="panel-text">"Googling my error message..."</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="panel-emoji">💡</div>
+                    <div class="panel-text">"Found answer on Stack Overflow!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="panel-emoji">📋</div>
+                    <div class="panel-text">"Ctrl+C, Ctrl+V"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="panel-emoji">🎉</div>
+                    <div class="panel-text">"It works! I'm a genius!"</div>
+                </div>
+            </div>
+            <p class="comic-description">The foundation of modern software development</p>
+        </div>
+
+        <!-- Comic 7 -->
+        <div class="comic-card">
+            <h2 class="comic-title">The "Quick Fix"</h2>
+            <div class="comic-strip">
+                <div class="comic-panel">
+                    <div class="panel-emoji">👤</div>
+                    <div class="panel-text">Manager: "Can you do a quick fix?"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="panel-emoji">🤔</div>
+                    <div class="panel-text">Dev: "Sure! Just a minute..."</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    <div class="panel-emoji">⏰</div>
+                    <div class="panel-text">*4 hours later*</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
+                    <div class="panel-emoji">💀</div>
+                    <div class="panel-text">"I've refactored the entire codebase"</div>
+                </div>
+            </div>
+            <p class="comic-description">There's no such thing as a "quick fix" in programming</p>
+        </div>
+
+        <!-- Comic 8 -->
+        <div class="comic-card">
+            <h2 class="comic-title">Coffee-Driven Development</h2>
+            <div class="comic-strip">
+                <div class="comic-panel" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="panel-emoji">😴</div>
+                    <div class="panel-text">"Can't focus... need coffee"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="panel-emoji">☕</div>
+                    <div class="panel-text">*First coffee*</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    <div class="panel-emoji">💻</div>
+                    <div class="panel-text">"Okay, I'm in the zone now!"</div>
+                </div>
+                <div class="comic-panel" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333;">
+                    <div class="panel-emoji">😵</div>
+                    <div class="panel-text">*5th coffee* "I can see the Matrix"</div>
+                </div>
+            </div>
+            <p class="comic-description">Coffee: The #1 dependency in every project</p>
+        </div>
+
+        <!-- Apparel Banner -->
+        <div class="apparel-banner">
+            <h2>👕 Turn Comics Into Wearable Art!</h2>
+            <p>Love these developer situations? Get them on awesome apparel from TechGeeks and wear your coding life with pride!</p>
+            <a href="https://techgeeksapparel.com" class="btn" target="_blank">Shop Comic-Inspired Apparel</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CodeLaughs</h3>
+                    <p>Where developers come to laugh at their own pain. Because if we don't laugh, we'll cry into our coffee.</p>
+                    <p style="margin-top: 1rem;"><a href="https://techgeeksapparel.com" target="_blank" style="color: var(--highlight-color);">Shop TechGeeks Apparel →</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Browse</h3>
+                    <ul>
+                        <li><a href="memes.html">Coding Memes</a></li>
+                        <li><a href="jokes.html">Developer Jokes</a></li>
+                        <li><a href="errors.html">Epic Errors</a></li>
+                        <li><a href="comics.html">Dev Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://github.com/techgeeksapparel" target="_blank">GitHub</a></li>
+                        <li><a href="https://reddit.com/r/ProgrammerHumor" target="_blank">r/ProgrammerHumor</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect & Share the Laughs</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank"><span>𝕏</span></a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank"><span>f</span></a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank"><span>📷</span></a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank"><span>🤖</span></a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank"><span>⚙</span></a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank"><span>📌</span></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 CodeLaughs. Made with ❤️ and lots of ☕ by developers, for developers. | 
+                <a href="https://techgeeksapparel.com" target="_blank">Shop Coding Humor Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
