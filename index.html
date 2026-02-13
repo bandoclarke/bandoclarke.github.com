@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeLaughs - The ultimate collection of programming humor, coding memes, and developer jokes. Laugh at relatable tech moments and wear your humor with pride!">
+    <meta name="keywords" content="programming humor, coding memes, developer jokes, tech humor, programming jokes">
+    <title>CodeLaughs | Programming Humor & Developer Memes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-color: #eee;
+            --card-bg: #0f3460;
+            --code-bg: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 52, 96, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:hover {
+            color: #ff6b8a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 20px;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "{ } < /> ; ( ) [ ]";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            opacity: 0.05;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+            text-shadow: 2px 2px 10px rgba(233, 69, 96, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--highlight-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ff4757;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--highlight-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--highlight-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--highlight-color);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--highlight-color);
+            border-radius: 2px;
+        }
+
+        /* Featured Memes Grid */
+        .memes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .meme-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .meme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(233, 69, 96, 0.3);
+        }
+
+        .meme-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .meme-content {
+            padding: 1.5rem;
+        }
+
+        .meme-title {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .meme-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .meme-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--highlight-color);
+        }
+
+        /* Categories Section */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary-color) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--highlight-color);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-count {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        /* Apparel CTA */
+        .apparel-cta {
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff4757 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+
+        .apparel-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .apparel-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .apparel-cta .btn {
+            background: white;
+            color: var(--highlight-color);
+            font-size: 1.1rem;
+        }
+
+        .apparel-cta .btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--highlight-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--highlight-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--highlight-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .social-icon:hover {
+            background: var(--highlight-color);
+            border-color: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .copyright a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .memes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .header-content {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">😂 CodeLaughs</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="memes.html">Memes</a></li>
+                    <li><a href="jokes.html">Jokes</a></li>
+                    <li><a href="errors.html">Epic Errors</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>// Where Developers LOL</h1>
+            <p>The ultimate collection of programming humor, coding memes, and developer jokes that every programmer can relate to!</p>
+            <div class="cta-buttons">
+                <a href="memes.html" class="btn btn-primary">Browse Memes</a>
+                <a href="https://techgeeksapparel.com" class="btn btn-secondary" target="_blank">Wear Your Humor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Categories -->
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="categories">
+            <a href="memes.html" style="text-decoration: none;">
+                <div class="category-card">
+                    <div class="category-icon">😂</div>
+                    <h3 class="category-title">Coding Memes</h3>
+                    <p class="category-count">50+ hilarious memes</p>
+                </div>
+            </a>
+
+            <a href="jokes.html" style="text-decoration: none;">
+                <div class="category-card">
+                    <div class="category-icon">🤣</div>
+                    <h3 class="category-title">Developer Jokes</h3>
+                    <p class="category-count">100+ jokes & puns</p>
+                </div>
+            </a>
+
+            <a href="errors.html" style="text-decoration: none;">
+                <div class="category-card">
+                    <div class="category-icon">💥</div>
+                    <h3 class="category-title">Epic Errors</h3>
+                    <p class="category-count">Legendary fails</p>
+                </div>
+            </a>
+
+            <a href="comics.html" style="text-decoration: none;">
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3 class="category-title">Dev Comics</h3>
+                    <p class="category-count">Relatable strips</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Featured Memes -->
+        <h2 class="section-title">Today's Top Picks</h2>
+        <div class="memes-grid">
+            <div class="meme-card">
+                <div class="meme-image">
+                    <div style="font-size: 2rem; line-height: 1.4;">
+                        while(alive) {<br>
+                        &nbsp;&nbsp;eat();<br>
+                        &nbsp;&nbsp;code();<br>
+                        &nbsp;&nbsp;sleep();<br>
+                        }
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Developer's Loop</h3>
+                    <p class="meme-description">The eternal cycle of every programmer's existence. No breaks, no exceptions.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Relatable</span>
+                        <span class="tag">#DailyLife</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meme-card">
+                <div class="meme-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div style="font-size: 1.8rem; line-height: 1.4; text-align: center;">
+                        It works!<br>
+                        <span style="font-size: 3rem;">🎉</span><br>
+                        <span style="font-size: 1.2rem; opacity: 0.8;">(Don't touch anything)</span>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Working Code = Sacred Code</h3>
+                    <p class="meme-description">When your code mysteriously works and you're too afraid to refactor it.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#TrueStory</span>
+                        <span class="tag">#Debugging</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meme-card">
+                <div class="meme-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div style="font-size: 1.6rem; line-height: 1.5; text-align: center;">
+                        Git commit -m<br>
+                        "fixed stuff"<br>
+                        <br>
+                        <span style="font-size: 2.5rem;">¯\_(ツ)_/¯</span>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Commit Message Excellence</h3>
+                    <p class="meme-description">When you're too tired to write proper commit messages. Future you will understand... right?</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Git</span>
+                        <span class="tag">#BeenThereDoneThat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meme-card">
+                <div class="meme-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div style="font-size: 1.5rem; line-height: 1.5; text-align: center;">
+                        99 little bugs in the code<br>
+                        99 little bugs<br>
+                        Take one down, patch it around<br>
+                        <span style="font-size: 2rem; color: #fff;">117 little bugs in the code</span>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Bug Multiplication Theory</h3>
+                    <p class="meme-description">Scientifically proven: fixing one bug creates more bugs. It's a law of nature.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Debugging</span>
+                        <span class="tag">#BugLife</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meme-card">
+                <div class="meme-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <div style="font-size: 1.8rem; line-height: 1.4; text-align: center;">
+                        // TODO:<br>
+                        // Fix this later<br>
+                        <br>
+                        <span style="font-size: 1.2rem; opacity: 0.8;">*5 years later*</span><br>
+                        <span style="font-size: 1rem; opacity: 0.6;">Still there...</span>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Eternal TODO</h3>
+                    <p class="meme-description">TODO comments are forever. Legacy code archaeologists will find them in 2077.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#LegacyCode</span>
+                        <span class="tag">#TODO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meme-card">
+                <div class="meme-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    <div style="font-size: 1.6rem; line-height: 1.5; text-align: center;">
+                        Copy from StackOverflow<br>
+                        <span style="font-size: 3rem;">↓</span><br>
+                        Paste into code<br>
+                        <span style="font-size: 3rem;">↓</span><br>
+                        <span style="font-size: 2rem;">✨ Senior Developer ✨</span>
+                    </div>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Path to Seniority</h3>
+                    <p class="meme-description">Master the art of Ctrl+C and Ctrl+V. That's 90% of programming, right?</p>
+                    <div class="meme-tags">
+                        <span class="tag">#StackOverflow</span>
+                        <span class="tag">#Coding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apparel CTA -->
+        <div class="apparel-cta">
+            <h2>👕 Wear Your Code Humor!</h2>
+            <p>Love these memes? Get them on awesome t-shirts, hoodies, and more! Show the world you speak fluent sarcasm and semicolons.</p>
+            <a href="https://techgeeksapparel.com" class="btn" target="_blank">Shop Programming Apparel</a>
+        </div>
+
+        <!-- Why CodeLaughs Section -->
+        <section style="background: var(--card-bg); padding: 3rem; border-radius: 20px; margin-top: 4rem;">
+            <h2 style="text-align: center; color: var(--highlight-color); margin-bottom: 2rem;">Why CodeLaughs?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="color: var(--text-color); margin-bottom: 0.5rem;">Relatable Content</h3>
+                    <p style="color: rgba(255,255,255,0.7);">Every joke, meme, and comic is something you've actually experienced as a developer.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🆕</div>
+                    <h3 style="color: var(--text-color); margin-bottom: 0.5rem;">Fresh Daily</h3>
+                    <p style="color: rgba(255,255,255,0.7);">New content added regularly. Your daily dose of developer humor.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">👕</div>
+                    <h3 style="color: var(--text-color); margin-bottom: 0.5rem;">Wearable Humor</h3>
+                    <p style="color: rgba(255,255,255,0.7);">Turn your favorite memes into awesome apparel from TechGeeks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CodeLaughs</h3>
+                    <p>Where developers come to laugh at their own pain. Because if we don't laugh, we'll cry into our coffee.</p>
+                    <p style="margin-top: 1rem;"><a href="https://techgeeksapparel.com" target="_blank" style="color: var(--highlight-color);">Shop TechGeeks Apparel →</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Browse</h3>
+                    <ul>
+                        <li><a href="memes.html">Coding Memes</a></li>
+                        <li><a href="jokes.html">Developer Jokes</a></li>
+                        <li><a href="errors.html">Epic Errors</a></li>
+                        <li><a href="comics.html">Dev Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://github.com/techgeeksapparel" target="_blank">GitHub</a></li>
+                        <li><a href="https://reddit.com/r/ProgrammerHumor" target="_blank">r/ProgrammerHumor</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Links - EDIT THESE URLs -->
+            <div class="social-links">
+                <h3>Connect & Share the Laughs</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank" title="Reddit">
+                        <span>🤖</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 CodeLaughs. Made with ❤️ and lots of ☕ by developers, for developers. | 
+                <a href="https://techgeeksapparel.com" target="_blank">Shop Coding Humor Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
