@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hilarious programming jokes, developer puns, and tech humor that will make you LOL. From dad jokes to dark humor - we've got it all!">
+    <title>Programming Jokes | CodeLaughs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-color: #eee;
+            --card-bg: #0f3460;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(15, 52, 96, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 3rem 20px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .joke-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--highlight-color);
+        }
+
+        .joke-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(233, 69, 96, 0.3);
+        }
+
+        .joke-setup {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .joke-punchline {
+            font-size: 1.2rem;
+            color: var(--highlight-color);
+            font-weight: 600;
+            padding: 1rem;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .joke-type {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight-color);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            border: 1px solid var(--highlight-color);
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+        }
+
+        .section-divider h2 {
+            font-size: 2rem;
+            color: var(--highlight-color);
+            display: inline-block;
+            background: var(--primary-color);
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--highlight-color);
+        }
+
+        .one-liner {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary-color) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-left: 4px solid var(--highlight-color);
+            transition: all 0.3s;
+        }
+
+        .one-liner:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--card-bg) 100%);
+        }
+
+        .apparel-banner {
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff4757 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+
+        .apparel-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--highlight-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--highlight-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--highlight-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .copyright a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">😂 CodeLaughs</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="memes.html">Memes</a></li>
+                    <li><a href="jokes.html">Jokes</a></li>
+                    <li><a href="errors.html">Epic Errors</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>🤣 Developer Jokes</h1>
+        <p>Laugh until you segfault</p>
+    </section>
+
+    <main class="container">
+        <!-- Classic Jokes -->
+        <div class="section-divider">
+            <h2>🎭 Classic Dev Jokes</h2>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why do programmers prefer dark mode?</div>
+            <div class="joke-punchline">Because light attracts bugs! 🐛</div>
+            <span class="joke-type">Classic</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">A SQL query walks into a bar, walks up to two tables and asks...</div>
+            <div class="joke-punchline">"Can I JOIN you?" 🍺</div>
+            <span class="joke-type">Database Humor</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why do Java developers wear glasses?</div>
+            <div class="joke-punchline">Because they can't C# 👓</div>
+            <span class="joke-type">Language Pun</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">How many programmers does it take to change a light bulb?</div>
+            <div class="joke-punchline">None. That's a hardware problem. 💡</div>
+            <span class="joke-type">Hardware vs Software</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's a programmer's favorite hangout place?</div>
+            <div class="joke-punchline">Foo Bar 🍹</div>
+            <span class="joke-type">Classic</span>
+        </div>
+
+        <!-- One-Liners -->
+        <div class="section-divider">
+            <h2>⚡ Quick-Fire One-Liners</h2>
+        </div>
+
+        <div class="one-liner">
+            "There are only 10 types of people in the world: those who understand binary, and those who don't." 1️⃣0️⃣
+        </div>
+
+        <div class="one-liner">
+            "Programming is 10% writing code and 90% understanding why it doesn't work." 🔧
+        </div>
+
+        <div class="one-liner">
+            "A programmer's wife asks: 'Could you go to the store and get a gallon of milk, and if they have eggs, get a dozen?' He returns with 12 gallons of milk." 🥛
+        </div>
+
+        <div class="one-liner">
+            "!false — It's funny because it's true." ✅
+        </div>
+
+        <div class="one-liner">
+            "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25!" 🎃=🎄
+        </div>
+
+        <div class="one-liner">
+            "I would tell you a UDP joke, but you might not get it." 📡
+        </div>
+
+        <div class="one-liner">
+            "I'd tell you a TCP joke, but I'd have to keep repeating it until you got it." 🔄
+        </div>
+
+        <div class="one-liner">
+            "Debugging: Being the detective in a crime movie where you're also the murderer." 🔍💀
+        </div>
+
+        <!-- Dark Humor -->
+        <div class="section-divider">
+            <h2>😈 Dark Dev Humor</h2>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's the object-oriented way to become wealthy?</div>
+            <div class="joke-punchline">Inheritance. 💰</div>
+            <span class="joke-type">OOP Humor</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why did the developer go broke?</div>
+            <div class="joke-punchline">Because he used up all his cache! 💸</div>
+            <span class="joke-type">Tech Pun</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What do you call a programmer from Finland?</div>
+            <div class="joke-punchline">Nerdic. 🇫🇮</div>
+            <span class="joke-type">Geography + Tech</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">A programmer is told to "go to hell." They come back with a new framework.</div>
+            <div class="joke-punchline">It's called "Hell.js" and it's surprisingly popular. 🔥</div>
+            <span class="joke-type">JavaScript Ecosystem</span>
+        </div>
+
+        <!-- Git Jokes -->
+        <div class="section-divider">
+            <h2>🌿 Git Jokes</h2>
+        </div>
+
+        <div class="one-liner">
+            "I have a joke about Git, but I haven't committed to it yet." 📝
+        </div>
+
+        <div class="one-liner">
+            "My code doesn't work, I have no idea why. My code works, I have no idea why." 🤷
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's a pirate's favorite git command?</div>
+            <div class="joke-punchline">git checkout -ARRRR 🏴‍☠️</div>
+            <span class="joke-type">Pirate + Git</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why did the developer quit his job?</div>
+            <div class="joke-punchline">Because he didn't get arrays. 📊</div>
+            <span class="joke-type">Dad Joke Level</span>
+        </div>
+
+        <!-- Language-Specific Jokes -->
+        <div class="section-divider">
+            <h2>💻 Language-Specific Jokes</h2>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why did Python go to therapy?</div>
+            <div class="joke-punchline">It had too much whitespace in its life. 🐍</div>
+            <span class="joke-type">Python</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">How do you comfort a JavaScript bug?</div>
+            <div class="joke-punchline">You console it. 🎮</div>
+            <span class="joke-type">JavaScript</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What did the Java code say to the C code?</div>
+            <div class="joke-punchline">"You've got no class!" ☕</div>
+            <span class="joke-type">Java vs C</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why is C++ so secretive?</div>
+            <div class="joke-punchline">Because it never likes to show its privates! 🔒</div>
+            <span class="joke-type">C++</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's a programmer's favorite kind of coffee?</div>
+            <div class="joke-punchline">Java, obviously. And lots of it. ☕☕☕</div>
+            <span class="joke-type">Coffee + Java</span>
+        </div>
+
+        <!-- More One-Liners -->
+        <div class="section-divider">
+            <h2>🎯 More Dev Wisdom</h2>
+        </div>
+
+        <div class="one-liner">
+            "I'm not lazy, I'm just on power saving mode." 🔋
+        </div>
+
+        <div class="one-liner">
+            "The best thing about a Boolean is even if you're wrong, you're only off by a bit." 0️⃣1️⃣
+        </div>
+
+        <div class="one-liner">
+            "Programmer (noun): A machine that turns coffee into code." ☕➡️💻
+        </div>
+
+        <div class="one-liner">
+            "Algorithm: A word used by programmers when they don't want to explain what they did." 🤫
+        </div>
+
+        <div class="one-liner">
+            "Roses are #FF0000, Violets are #0000FF, All my base are belong to you." 🌹💙
+        </div>
+
+        <div class="one-liner">
+            "Java is to JavaScript what car is to carpet." 🚗🧶
+        </div>
+
+        <div class="one-liner">
+            "In order to understand recursion, you must first understand recursion." 🔄
+        </div>
+
+        <div class="one-liner">
+            "If at first you don't succeed, call it version 1.0." 🎯
+        </div>
+
+        <!-- More Classic Jokes -->
+        <div class="section-divider">
+            <h2>🎪 More Classics</h2>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What do you call 8 hobbits?</div>
+            <div class="joke-punchline">A hobbyte! 💾</div>
+            <span class="joke-type">Binary Joke</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why do programmers hate nature?</div>
+            <div class="joke-punchline">It has too many bugs. 🦗</div>
+            <span class="joke-type">Nature vs Code</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's the best way to generate a random string?</div>
+            <div class="joke-punchline">Put a new developer in front of Vim and tell them to save and exit. 😱</div>
+            <span class="joke-type">Vim Trauma</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">A programmer had a problem. He thought to himself, "I know, I'll solve it with threads!"</div>
+            <div class="joke-punchline">Now problems. two he has 🧵</div>
+            <span class="joke-type">Threading Chaos</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">Why was the developer unhappy at their job?</div>
+            <div class="joke-punchline">They wanted arrays. 💰</div>
+            <span class="joke-type">Workplace Humor</span>
+        </div>
+
+        <div class="joke-card">
+            <div class="joke-setup">What's the second hardest problem in computer science?</div>
+            <div class="joke-punchline">Off-by-one errors. 0️⃣</div>
+            <span class="joke-type">Classic CS Problem</span>
+        </div>
+
+        <!-- Apparel Banner -->
+        <div class="apparel-banner">
+            <h2>👕 Wear Your Favorite Jokes!</h2>
+            <p>Turn these jokes into conversation starters! Get programming humor printed on premium t-shirts and hoodies from TechGeeks Apparel.</p>
+            <a href="https://techgeeksapparel.com" class="btn" target="_blank">Shop Developer Humor Apparel</a>
+        </div>
+
+        <!-- Final Section -->
+        <div class="section-divider">
+            <h2>🎉 Bonus Round</h2>
+        </div>
+
+        <div class="one-liner">
+            "There are two hard problems in computer science: cache invalidation, naming things, and off-by-one errors." 🤔
+        </div>
+
+        <div class="one-liner">
+            "My code DOESN'T work. I have no idea why. My code WORKS. I have no idea why." 🎭
+        </div>
+
+        <div class="one-liner">
+            "Documentation is like sex. When it's good, it's very good. When it's bad, it's better than nothing." 📚
+        </div>
+
+        <div class="one-liner">
+            "Real programmers count from 0." 0️⃣
+        </div>
+
+        <div class="one-liner">
+            "It works on my machine ¯\\_(ツ)_/¯" 💻
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CodeLaughs</h3>
+                    <p>Where developers come to laugh at their own pain. Because if we don't laugh, we'll cry into our coffee.</p>
+                    <p style="margin-top: 1rem;"><a href="https://techgeeksapparel.com" target="_blank" style="color: var(--highlight-color);">Shop TechGeeks Apparel →</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Browse</h3>
+                    <ul>
+                        <li><a href="memes.html">Coding Memes</a></li>
+                        <li><a href="jokes.html">Developer Jokes</a></li>
+                        <li><a href="errors.html">Epic Errors</a></li>
+                        <li><a href="comics.html">Dev Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://github.com/techgeeksapparel" target="_blank">GitHub</a></li>
+                        <li><a href="https://reddit.com/r/ProgrammerHumor" target="_blank">r/ProgrammerHumor</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect & Share the Laughs</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank">
+                        <span>🤖</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank">
+                        <span>📌</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 CodeLaughs. Made with ❤️ and lots of ☕ by developers, for developers. | 
+                <a href="https://techgeeksapparel.com" target="_blank">Shop Coding Humor Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
