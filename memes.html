@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hilarious programming memes that every developer can relate to. From debugging nightmares to copy-paste coding - laugh at your developer life!">
+    <title>Coding Memes | CodeLaughs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-color: #eee;
+            --card-bg: #0f3460;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(15, 52, 96, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 3rem 20px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            border-radius: 25px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--highlight-color);
+            background: rgba(233, 69, 96, 0.2);
+        }
+
+        .memes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .meme-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .meme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(233, 69, 96, 0.3);
+        }
+
+        .meme-visual {
+            width: 100%;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .meme-content {
+            padding: 1.5rem;
+        }
+
+        .meme-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .meme-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .meme-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--highlight-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--highlight-color);
+        }
+
+        .apparel-banner {
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff4757 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+
+        .apparel-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .apparel-banner p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--highlight-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--highlight-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--highlight-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .copyright a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .memes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">😂 CodeLaughs</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="memes.html">Memes</a></li>
+                    <li><a href="jokes.html">Jokes</a></li>
+                    <li><a href="errors.html">Epic Errors</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>😂 Coding Memes</h1>
+        <p>The daily struggles of a developer, visualized</p>
+    </section>
+
+    <main class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn active">All Memes</button>
+            <button class="filter-btn">Debugging</button>
+            <button class="filter-btn">Git</button>
+            <button class="filter-btn">Stack Overflow</button>
+            <button class="filter-btn">Production</button>
+        </div>
+
+        <div class="memes-grid">
+            <!-- Meme 1 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    if (brain.isEmpty()) {<br>
+                    &nbsp;&nbsp;coffee.drink();<br>
+                    &nbsp;&nbsp;stackoverflow.search();<br>
+                    }<br>
+                    <span style="font-size: 2.5rem;">☕</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Developer Survival Kit</h3>
+                    <p class="meme-description">Two things every programmer needs: caffeine and the internet.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#StackOverflow</span>
+                        <span class="tag">#Coffee</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 2 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    Code at 3 AM:<br>
+                    <span style="font-size: 2rem;">🧠💡✨</span><br>
+                    "I'm a genius!"<br>
+                    <br>
+                    Code at 3 PM:<br>
+                    <span style="font-size: 2rem;">🤦‍♂️💀</span><br>
+                    "What was I thinking?!"
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">3 AM Code vs 3 PM Code</h3>
+                    <p class="meme-description">Late night coding seems brilliant until you review it in daylight.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#CodingLife</span>
+                        <span class="tag">#LateNight</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 3 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    git push --force<br>
+                    <br>
+                    <span style="font-size: 3rem;">💀</span><br>
+                    <br>
+                    <span style="font-size: 1.2rem;">Production:</span><br>
+                    <span style="font-size: 2rem;">🔥🔥🔥</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Forbidden Command</h3>
+                    <p class="meme-description">Some commands should require a confirmation dialog with your boss's approval.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Git</span>
+                        <span class="tag">#Production</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 4 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    "Works on my machine"<br>
+                    <br>
+                    <span style="font-size: 3rem;">🤷‍♂️</span><br>
+                    <br>
+                    <span style="font-size: 1rem;">*ships entire computer*</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The Classic Defense</h3>
+                    <p class="meme-description">The universal excuse that has saved developers since the beginning of time.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Debugging</span>
+                        <span class="tag">#Classic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 5 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
+                    PM: "Quick question..."<br>
+                    <br>
+                    <span style="font-size: 2.5rem;">😰</span><br>
+                    <br>
+                    *3 hours of meetings later*<br>
+                    <br>
+                    <span style="font-size: 1rem;">Still no code written</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">The "Quick Question" Trap</h3>
+                    <p class="meme-description">Nothing destroys productivity faster than a "quick" question from management.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Meetings</span>
+                        <span class="tag">#Productivity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 6 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    console.log("here1");<br>
+                    console.log("here2");<br>
+                    console.log("wtf");<br>
+                    console.log("seriously??");<br>
+                    <br>
+                    <span style="font-size: 2rem;">🤔</span><br>
+                    <span style="font-size: 0.9rem;">Advanced debugging technique</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Professional Debugging</h3>
+                    <p class="meme-description">Who needs breakpoints when you have console.log everywhere?</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Debugging</span>
+                        <span class="tag">#Console</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 7 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333;">
+                    Junior Dev:<br>
+                    "Why is this commented out?"<br>
+                    <br>
+                    Senior Dev:<br>
+                    "NO IDEA. DON'T TOUCH IT."<br>
+                    <br>
+                    <span style="font-size: 2.5rem;">⚠️</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Ancient Legacy Code</h3>
+                    <p class="meme-description">Some things are commented out for reasons lost to time. Leave them be.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#LegacyCode</span>
+                        <span class="tag">#Wisdom</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 8 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);">
+                    Me: *makes tiny CSS change*<br>
+                    <br>
+                    <span style="font-size: 2rem;">🎨</span><br>
+                    <br>
+                    Entire website:<br>
+                    <span style="font-size: 2.5rem;">💥🔥💀</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">CSS Is Magic</h3>
+                    <p class="meme-description">Change one pixel, break everything. CSS works in mysterious ways.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#CSS</span>
+                        <span class="tag">#Frontend</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 9 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);">
+                    Estimate: 2 hours<br>
+                    <span style="font-size: 2rem;">⏰</span><br>
+                    <br>
+                    Reality: 2 days<br>
+                    <span style="font-size: 2rem;">📅</span><br>
+                    <br>
+                    Explanation to manager:<br>
+                    <span style="font-size: 1.5rem;">😅</span> "Edge cases..."
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Estimation Skills</h3>
+                    <p class="meme-description">Developers are notoriously optimistic when estimating. Multiply by 10 for accuracy.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#ProjectManagement</span>
+                        <span class="tag">#Realistic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 10 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    try {<br>
+                    &nbsp;&nbsp;dangerousCode();<br>
+                    } catch (Exception e) {<br>
+                    &nbsp;&nbsp;// TODO: handle this<br>
+                    }<br>
+                    <br>
+                    <span style="font-size: 2rem;">🙈</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Exception Handling Pro</h3>
+                    <p class="meme-description">Catching exceptions and doing absolutely nothing with them since 1995.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#ErrorHandling</span>
+                        <span class="tag">#TODO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 11 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">
+                    Client: "Can you add one small feature?"<br>
+                    <br>
+                    Dev: *rewrites entire codebase*<br>
+                    <br>
+                    <span style="font-size: 2.5rem;">🔧🔨⚙️</span><br>
+                    <br>
+                    "Sure, just a small change!"
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Just One Small Feature</h3>
+                    <p class="meme-description">There's no such thing as a small feature. Everything is connected.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#ClientRequests</span>
+                        <span class="tag">#Refactoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 12 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    Friday 5 PM:<br>
+                    "I'll deploy on Monday"<br>
+                    <br>
+                    <span style="font-size: 2rem;">😎</span><br>
+                    <br>
+                    Friday 5:30 PM:<br>
+                    *deploys to production*<br>
+                    <span style="font-size: 2rem;">💀</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Friday Deployment</h3>
+                    <p class="meme-description">Never deploy on Friday. Unless you hate weekends.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Production</span>
+                        <span class="tag">#Friday</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 13 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
+                    Documentation:<br>
+                    <span style="font-size: 3rem;">📝❌</span><br>
+                    <br>
+                    Comments in code:<br>
+                    <span style="font-size: 3rem;">💬❌</span><br>
+                    <br>
+                    Git commit messages:<br>
+                    "fixed stuff"<br>
+                    <span style="font-size: 2rem;">✅</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Documentation? What's That?</h3>
+                    <p class="meme-description">Future you will hate current you for this lack of documentation.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Documentation</span>
+                        <span class="tag">#Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 14 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
+                    npm install<br>
+                    <br>
+                    <span style="font-size: 1.2rem;">*downloads entire internet*</span><br>
+                    <br>
+                    node_modules:<br>
+                    <span style="font-size: 2.5rem;">📦📦📦</span><br>
+                    <span style="font-size: 2.5rem;">📦📦📦</span><br>
+                    500 MB
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Node Modules = Black Hole</h3>
+                    <p class="meme-description">Install one package, get 1,473 dependencies. Perfectly balanced.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#NPM</span>
+                        <span class="tag">#JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 15 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    Regex:<br>
+                    /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/<br>
+                    <br>
+                    <span style="font-size: 2rem;">🤯</span><br>
+                    <br>
+                    <span style="font-size: 0.9rem;">*Copied from StackOverflow*</span><br>
+                    <span style="font-size: 0.9rem;">*No idea how it works*</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Regex = Dark Magic</h3>
+                    <p class="meme-description">You write it once. It works. You never touch it again. Ever.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Regex</span>
+                        <span class="tag">#StackOverflow</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meme 16 -->
+            <div class="meme-card">
+                <div class="meme-visual" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    Boss: "Is it done yet?"<br>
+                    <br>
+                    Me: *ran code once*<br>
+                    *it didn't crash*<br>
+                    <br>
+                    "Yes! Fully tested and ready!"<br>
+                    <br>
+                    <span style="font-size: 2.5rem;">🤞</span>
+                </div>
+                <div class="meme-content">
+                    <h3 class="meme-title">Quality Assurance Level: Pro</h3>
+                    <p class="meme-description">If it compiled, it's production-ready. That's the rule.</p>
+                    <div class="meme-tags">
+                        <span class="tag">#Testing</span>
+                        <span class="tag">#QA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apparel Banner -->
+        <div class="apparel-banner">
+            <h2>👕 Turn These Memes Into Wearable Art!</h2>
+            <p>Love these coding memes? Get them printed on high-quality t-shirts, hoodies, and more. Perfect for showing off your developer humor in style!</p>
+            <a href="https://techgeeksapparel.com" class="btn" target="_blank">Shop Meme Apparel Now</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CodeLaughs</h3>
+                    <p>Where developers come to laugh at their own pain. Because if we don't laugh, we'll cry into our coffee.</p>
+                    <p style="margin-top: 1rem;"><a href="https://techgeeksapparel.com" target="_blank" style="color: var(--highlight-color);">Shop TechGeeks Apparel →</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Browse</h3>
+                    <ul>
+                        <li><a href="memes.html">Coding Memes</a></li>
+                        <li><a href="jokes.html">Developer Jokes</a></li>
+                        <li><a href="errors.html">Epic Errors</a></li>
+                        <li><a href="comics.html">Dev Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://github.com/techgeeksapparel" target="_blank">GitHub</a></li>
+                        <li><a href="https://reddit.com/r/ProgrammerHumor" target="_blank">r/ProgrammerHumor</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect & Share the Laughs</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank" title="Reddit">
+                        <span>🤖</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 CodeLaughs. Made with ❤️ and lots of ☕ by developers, for developers. | 
+                <a href="https://techgeeksapparel.com" target="_blank">Shop Coding Humor Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
