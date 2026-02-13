@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Epic programming errors, legendary bugs, and hilarious error messages that will make you feel better about your own code disasters.">
+    <title>Epic Errors | CodeLaughs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --highlight-color: #e94560;
+            --text-color: #eee;
+            --card-bg: #0f3460;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(15, 52, 96, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--highlight-color); }
+        .page-header {
+            text-align: center;
+            padding: 3rem 20px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2) 0%, rgba(15, 52, 96, 0.2) 100%);
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        .error-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #ff6b6b;
+        }
+        .error-title {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .error-message {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            color: #ff6b6b;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .error-story {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .error-tag {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+            border: 1px solid #ff6b6b;
+        }
+        .apparel-banner {
+            background: linear-gradient(135deg, var(--highlight-color) 0%, #ff4757 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+        .apparel-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--highlight-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        footer {
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--highlight-color);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 {
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+        .footer-section ul { list-style: none; }
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover { color: var(--highlight-color); }
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        .social-icon:hover {
+            background: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .copyright a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">😂 CodeLaughs</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="memes.html">Memes</a></li>
+                    <li><a href="jokes.html">Jokes</a></li>
+                    <li><a href="errors.html">Epic Errors</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>💥 Epic Errors</h1>
+        <p>When code goes spectacularly wrong</p>
+    </section>
+
+    <main class="container">
+        <div class="error-card">
+            <h2 class="error-title">🔥 The Legendary Null Pointer Exception</h2>
+            <div class="error-message">
+NullPointerException at line 1337<br>
+Expected: Something<br>
+Got: Nothing<br>
+Developer Tears: Infinite
+            </div>
+            <p class="error-story">
+                The most feared error in programming. You thought you had an object. You were wrong. You had null. Everything crashes. Coffee consumption increases by 300%.
+            </p>
+            <span class="error-tag">#NullPointer</span>
+            <span class="error-tag">#JavaPain</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">💀 Segmentation Fault (Core Dumped)</h2>
+            <div class="error-message">
+Segmentation fault (core dumped)<br>
+<br>
+*Your program has left the chat*
+            </div>
+            <p class="error-story">
+                When your C program decides to access memory it shouldn't. The OS steps in like a bouncer: "Not today, buddy." Your program dies instantly. No goodbyes. No explanation. Just pain.
+            </p>
+            <span class="error-tag">#C/C++</span>
+            <span class="error-tag">#MemoryIssues</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">🤯 Undefined Is Not a Function</h2>
+            <div class="error-message">
+TypeError: undefined is not a function<br>
+(In 'myFunction()', 'myFunction' is undefined)<br>
+<br>
+Stack trace: *gives you nothing useful*
+            </div>
+            <p class="error-story">
+                JavaScript's way of saying "I have no idea what you're talking about." You swear you defined that function. JavaScript disagrees. Time to add 47 console.log statements.
+            </p>
+            <span class="error-tag">#JavaScript</span>
+            <span class="error-tag">#Undefined</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">😱 Stack Overflow (The Irony)</h2>
+            <div class="error-message">
+StackOverflowError<br>
+<br>
+Recursion depth exceeded<br>
+You called yourself too many times<br>
+(Maybe add a base case?)
+            </div>
+            <p class="error-story">
+                Your function calls itself, which calls itself, which calls itself... until the stack explodes. The irony? You'll probably search "Stack Overflow" to fix this StackOverflowError on Stack Overflow.
+            </p>
+            <span class="error-tag">#Recursion</span>
+            <span class="error-tag">#Infinite</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">🔐 Permission Denied</h2>
+            <div class="error-message">
+Permission denied<br>
+<br>
+sudo: Permission denied<br>
+<br>
+*Even root can't help you now*
+            </div>
+            <p class="error-story">
+                You: "I just want to edit this file."<br>
+                System: "No."<br>
+                You: "But I'm root!"<br>
+                System: "Did I stutter?"<br>
+                *Googles how to change file permissions for the 100th time*
+            </p>
+            <span class="error-tag">#Linux</span>
+            <span class="error-tag">#Permissions</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">⚠️ Unexpected Token</h2>
+            <div class="error-message">
+SyntaxError: Unexpected token '<'<br>
+<br>
+Expected: Code that makes sense<br>
+Got: ???
+            </div>
+            <p class="error-story">
+                You're missing a bracket. Or a semicolon. Or a comma. Could be anywhere in your 5000-line file. Good luck! The error message won't tell you where.
+            </p>
+            <span class="error-tag">#SyntaxError</span>
+            <span class="error-tag">#Brackets</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">🎭 Cannot Read Property of Undefined</h2>
+            <div class="error-message">
+TypeError: Cannot read property 'value' of undefined<br>
+<br>
+Translation: Something you thought existed doesn't exist
+            </div>
+            <p class="error-story">
+                JavaScript's most common error. You tried to access a property of something that is undefined. Which means you're accessing a property of nothing. Which is impossible. But you tried anyway.
+            </p>
+            <span class="error-tag">#JavaScript</span>
+            <span class="error-tag">#PropertyAccess</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">🌊 Memory Leak Detected</h2>
+            <div class="error-message">
+WARNING: Memory leak detected<br>
+<br>
+Available Memory: 0 MB<br>
+Your Program's Memory: All of it<br>
+System: *sweating*
+            </div>
+            <p class="error-story">
+                Your program is eating RAM like Pac-Man. Soon, it will consume all available memory. The system will slow to a crawl. Your computer will cry. You'll force-quit and pretend it never happened.
+            </p>
+            <span class="error-tag">#MemoryLeak</span>
+            <span class="error-tag">#Performance</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">💣 Fatal Error: Exception Thrown During Exception Handling</h2>
+            <div class="error-message">
+Fatal Error: Exception thrown during exception handling<br>
+<br>
+Your error handling has errors<br>
+We need to go deeper...
+            </div>
+            <p class="error-story">
+                You tried to handle an error. That error handler threw an error. Now you have an error handling your error handler's error. This is fine. Everything is fine. *Computer catches fire*
+            </p>
+            <span class="error-tag">#Inception</span>
+            <span class="error-tag">#ErrorHandling</span>
+        </div>
+
+        <div class="error-card">
+            <h2 class="error-title">🎲 Heisenbug</h2>
+            <div class="error-message">
+Error: <something went wrong><br>
+<br>
+Trying to debug...<br>
+Error: <vanishes mysteriously><br>
+<br>
+*Quantum mechanics has entered the chat*
+            </div>
+            <p class="error-story">
+                A bug that disappears when you try to observe it. Add a console.log? Bug is gone. Remove console.log? Bug is back. It exists in a superposition of broken and working. Schrödinger's code.
+            </p>
+            <span class="error-tag">#Heisenbug</span>
+            <span class="error-tag">#Quantum</span>
+        </div>
+
+        <!-- Apparel Banner -->
+        <div class="apparel-banner">
+            <h2>👕 Wear Your War Stories!</h2>
+            <p>Survived these errors? Commemorate your battles with hilarious error-themed apparel from TechGeeks!</p>
+            <a href="https://techgeeksapparel.com" class="btn" target="_blank">Shop Error Message Apparel</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CodeLaughs</h3>
+                    <p>Where developers come to laugh at their own pain. Because if we don't laugh, we'll cry into our coffee.</p>
+                    <p style="margin-top: 1rem;"><a href="https://techgeeksapparel.com" target="_blank" style="color: var(--highlight-color);">Shop TechGeeks Apparel →</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Browse</h3>
+                    <ul>
+                        <li><a href="memes.html">Coding Memes</a></li>
+                        <li><a href="jokes.html">Developer Jokes</a></li>
+                        <li><a href="errors.html">Epic Errors</a></li>
+                        <li><a href="comics.html">Dev Comics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://github.com/techgeeksapparel" target="_blank">GitHub</a></li>
+                        <li><a href="https://reddit.com/r/ProgrammerHumor" target="_blank">r/ProgrammerHumor</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect & Share the Laughs</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank"><span>𝕏</span></a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank"><span>f</span></a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank"><span>📷</span></a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank"><span>🤖</span></a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank"><span>⚙</span></a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank"><span>📌</span></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 CodeLaughs. Made with ❤️ and lots of ☕ by developers, for developers. | 
+                <a href="https://techgeeksapparel.com" target="_blank">Shop Coding Humor Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
