@@ -63,9 +63,7 @@
             gap: 0.5rem;
         }
 
-        .logo:hover {
-            color: #ff6b8a;
-        }
+        .logo:hover { color: #ff6b8a; }
 
         nav ul {
             list-style: none;
@@ -82,9 +80,7 @@
             padding: 0.5rem 0;
         }
 
-        nav a:hover {
-            color: var(--highlight-color);
-        }
+        nav a:hover { color: var(--highlight-color); }
 
         /* Hero Section */
         .hero {
@@ -228,9 +224,7 @@
             text-align: center;
         }
 
-        .meme-content {
-            padding: 1.5rem;
-        }
+        .meme-content { padding: 1.5rem; }
 
         .meme-title {
             font-size: 1.3rem;
@@ -354,18 +348,9 @@
             margin-bottom: 2rem;
         }
 
-        .footer-section h3 {
-            color: var(--highlight-color);
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
+        .footer-section h3 { color: var(--highlight-color); margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
 
         .footer-section a {
             color: rgba(255, 255, 255, 0.7);
@@ -373,9 +358,7 @@
             transition: color 0.3s;
         }
 
-        .footer-section a:hover {
-            color: var(--highlight-color);
-        }
+        .footer-section a:hover { color: var(--highlight-color); }
 
         .social-links {
             margin-top: 2rem;
@@ -425,33 +408,243 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .copyright a {
+        .copyright a { color: var(--highlight-color); text-decoration: none; }
+        .copyright a:hover { text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════
+           ECOSYSTEM SECTION STYLES
+           ═══════════════════════════════════════════ */
+        .ecosystem-section {
+            background: #0a0a1a;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ecosystem-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(233,69,96,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(233,69,96,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .ecosystem-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ecosystem-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .ecosystem-terminal-tag {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
             color: var(--highlight-color);
+            background: rgba(233,69,96,0.08);
+            border: 1px solid rgba(233,69,96,0.25);
+            padding: 4px 14px;
+            border-radius: 3px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .ecosystem-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 14px;
+            line-height: 1.2;
+        }
+
+        .ecosystem-title span { color: var(--highlight-color); }
+
+        .ecosystem-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .eco-card {
+            background: #0f1426;
+            border: 1px solid #1c2340;
+            border-radius: 12px;
+            padding: 26px 22px;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+        }
+
+        .eco-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--eco-accent, var(--highlight-color));
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .eco-card:hover {
+            border-color: var(--eco-accent, var(--highlight-color));
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
             text-decoration: none;
         }
 
-        .copyright a:hover {
-            text-decoration: underline;
+        .eco-card:hover::before { opacity: 1; }
+
+        .eco-card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
         }
 
-        /* Responsive */
+        .eco-card-badge {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--eco-accent, var(--highlight-color));
+            background: rgba(233,69,96,0.1);
+            padding: 3px 9px;
+            border-radius: 3px;
+        }
+
+        .eco-card-arrow {
+            color: #2a3050;
+            font-size: 18px;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .eco-card:hover .eco-card-arrow {
+            color: var(--eco-accent, var(--highlight-color));
+            transform: translate(3px, -3px);
+        }
+
+        .eco-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 8px;
+        }
+
+        .eco-card-text {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.65;
+            margin: 0 0 16px;
+        }
+
+        .eco-card-url {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: #2a3050;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .eco-card-url::before {
+            content: '//';
+            color: var(--eco-accent, var(--highlight-color));
+            opacity: 0.5;
+        }
+
+        /* Card accent variants — all tinted with site highlight red/pink */
+        .eco-card--red   { --eco-accent: #e94560; }
+        .eco-card--red .eco-card-badge { background: rgba(233,69,96,0.12); }
+
+        .eco-card--pink  { --eco-accent: #f472b6; }
+        .eco-card--pink .eco-card-badge { color: #f472b6; background: rgba(244,114,182,0.1); }
+
+        .eco-card--amber { --eco-accent: #fbbf24; }
+        .eco-card--amber .eco-card-badge { color: #fbbf24; background: rgba(251,191,36,0.1); }
+
+        .eco-card--teal  { --eco-accent: #2dd4bf; }
+        .eco-card--teal .eco-card-badge  { color: #2dd4bf; background: rgba(45,212,191,0.1); }
+
+        /* SEO body text block */
+        .ecosystem-body {
+            background: #0f1426;
+            border: 1px solid #1c2340;
+            border-left: 3px solid var(--highlight-color);
+            border-radius: 0 12px 12px 0;
+            padding: 32px 36px;
+        }
+
+        .ecosystem-body h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 16px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .ecosystem-body h3::before {
+            content: '// ';
+            color: var(--highlight-color);
+            opacity: 0.55;
+        }
+
+        .ecosystem-body p {
+            font-size: 0.925rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.9;
+            margin: 0 0 14px;
+        }
+
+        .ecosystem-body p:last-child { margin-bottom: 0; }
+
+        .ecosystem-body a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(233,69,96,0.3);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .ecosystem-body a:hover {
+            color: #fff;
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .ecosystem-body a.link-pink   { color: #f472b6; border-color: rgba(244,114,182,0.3); }
+        .ecosystem-body a.link-amber  { color: #fbbf24; border-color: rgba(251,191,36,0.3); }
+        .ecosystem-body a.link-teal   { color: #2dd4bf; border-color: rgba(45,212,191,0.3); }
+
+        .ecosystem-body a.link-pink:hover,
+        .ecosystem-body a.link-amber:hover,
+        .ecosystem-body a.link-teal:hover { color: #fff; }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .memes-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .header-content {
-                justify-content: center;
-                gap: 1rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .memes-grid { grid-template-columns: 1fr; }
+            nav ul { gap: 1rem; }
+            .header-content { justify-content: center; gap: 1rem; }
+            .ecosystem-section { padding: 60px 16px; }
+            .ecosystem-body { padding: 24px 20px; }
         }
     </style>
 </head>
@@ -496,7 +689,6 @@
                     <p class="category-count">50+ hilarious memes</p>
                 </div>
             </a>
-
             <a href="jokes.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon">🤣</div>
@@ -504,7 +696,6 @@
                     <p class="category-count">100+ jokes & puns</p>
                 </div>
             </a>
-
             <a href="errors.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon">💥</div>
@@ -512,7 +703,6 @@
                     <p class="category-count">Legendary fails</p>
                 </div>
             </a>
-
             <a href="comics.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon">📱</div>
@@ -567,8 +757,7 @@
                 <div class="meme-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
                     <div style="font-size: 1.6rem; line-height: 1.5; text-align: center;">
                         Git commit -m<br>
-                        "fixed stuff"<br>
-                        <br>
+                        "fixed stuff"<br><br>
                         <span style="font-size: 2.5rem;">¯\_(ツ)_/¯</span>
                     </div>
                 </div>
@@ -605,8 +794,7 @@
                 <div class="meme-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
                     <div style="font-size: 1.8rem; line-height: 1.4; text-align: center;">
                         // TODO:<br>
-                        // Fix this later<br>
-                        <br>
+                        // Fix this later<br><br>
                         <span style="font-size: 1.2rem; opacity: 0.8;">*5 years later*</span><br>
                         <span style="font-size: 1rem; opacity: 0.6;">Still there...</span>
                     </div>
@@ -672,6 +860,112 @@
         </section>
     </main>
 
+    <!-- ═══════════════════════════════════════════════
+         THE DEV ECOSYSTEM SECTION
+         ═══════════════════════════════════════════════ -->
+    <section class="ecosystem-section" aria-label="Developer tools and resources ecosystem">
+        <div class="ecosystem-inner">
+
+            <!-- Header -->
+            <div class="ecosystem-header">
+                <div class="ecosystem-terminal-tag">$ ls -la /dev/ecosystem</div>
+                <h2 class="ecosystem-title">The Dev <span>Ecosystem</span></h2>
+                <p class="ecosystem-desc">
+                    CodeLaughs is part of a wider universe of developer tools, humor, and resources built for people who live in the terminal and laugh at their own stack traces.
+                </p>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="ecosystem-grid">
+
+                <!-- Card 1: Workspace.ini / Soloist AI -->
+                <a href="https://soloist.ai/workspaceinit"
+                   rel="dofollow"
+                   target="_blank"
+                   class="eco-card eco-card--pink"
+                   aria-label="Workspace.ini - AI-powered solo developer workspace builder">
+                    <div class="eco-card-meta">
+                        <span class="eco-card-badge">AI · Design</span>
+                        <span class="eco-card-arrow">↗</span>
+                    </div>
+                    <h3 class="eco-card-title">Workspace.ini()</h3>
+                    <p class="eco-card-text">
+                        An AI-powered solo website designer that builds your workspace from a single prompt. No designers harmed in the making.
+                    </p>
+                    <div class="eco-card-url">soloist.ai/workspaceinit</div>
+                </a>
+
+                <!-- Card 2: The Pull Request / Wix -->
+                <a href="https://my-site-kqupg6qa-bandoclarke.wix-vibe-site.com"
+                   rel="dofollow"
+                   target="_blank"
+                   class="eco-card eco-card--amber"
+                   aria-label="The Pull Request - developer culture blog and magazine">
+                    <div class="eco-card-meta">
+                        <span class="eco-card-badge">Blog · Culture</span>
+                        <span class="eco-card-arrow">↗</span>
+                    </div>
+                    <h3 class="eco-card-title">The Pull Request</h3>
+                    <p class="eco-card-text">
+                        A developer culture blog for the code-obsessed. Think Hacker News, but with better jokes and a slightly worse uptime.
+                    </p>
+                    <div class="eco-card-url">wix-vibe-site.com</div>
+                </a>
+
+                <!-- Card 3: Giants' Shoulders / Beehiiv newsletter -->
+                <a href="https://the-giants-shoulders-a6554a.beehiiv.com/"
+                   rel="dofollow"
+                   target="_blank"
+                   class="eco-card eco-card--teal"
+                   aria-label="On the Giants' Shoulders - developer newsletter on tools and ideas">
+                    <div class="eco-card-meta">
+                        <span class="eco-card-badge">Newsletter</span>
+                        <span class="eco-card-arrow">↗</span>
+                    </div>
+                    <h3 class="eco-card-title">On the Giants' Shoulders</h3>
+                    <p class="eco-card-text">
+                        A developer newsletter about the tools, ideas, and frameworks that the best engineers actually use. Standing on proven foundations.
+                    </p>
+                    <div class="eco-card-url">beehiiv.com</div>
+                </a>
+
+                <!-- Card 4: PushToProduction.lol / Framer -->
+                <a href="https://various-alternative-397011.framer.app/"
+                   rel="dofollow"
+                   target="_blank"
+                   class="eco-card eco-card--red"
+                   aria-label="PushToProduction.lol - hall of fame for funny git commit messages">
+                    <div class="eco-card-meta">
+                        <span class="eco-card-badge">Community · Git</span>
+                        <span class="eco-card-arrow">↗</span>
+                    </div>
+                    <h3 class="eco-card-title">PushToProduction.lol</h3>
+                    <p class="eco-card-text">
+                        A curated hall of fame for the most legendary git commit messages. Where "fixed stuff" and "here be dragons" live forever.
+                    </p>
+                    <div class="eco-card-url">framer.app</div>
+                </a>
+
+            </div>
+
+            <!-- SEO Body Text -->
+            <div class="ecosystem-body">
+                <h3>About this ecosystem</h3>
+                <p>
+                    If you're a developer who's ever laughed at a <a href="https://various-alternative-397011.framer.app/" rel="dofollow" target="_blank">legendary git commit message</a> or typed <code style="background:rgba(255,255,255,0.07); padding: 1px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 0.85em;">git commit -m "idk it works now"</code> without guilt, you're in the right corner of the internet. CodeLaughs connects a growing ecosystem of dev-first projects — from an <a href="https://soloist.ai/workspaceinit" rel="dofollow" target="_blank" class="link-pink">AI solo website designer</a> that builds your digital workspace on command, to a <a href="https://my-site-kqupg6qa-bandoclarke.wix-vibe-site.com" rel="dofollow" target="_blank" class="link-amber">developer culture blog</a> covering the tools and ideas shaping how we build.
+                </p>
+                <p>
+                    Whether you're keeping up with the latest in developer tooling through <a href="https://the-giants-shoulders-a6554a.beehiiv.com/" rel="dofollow" target="_blank" class="link-teal">a newsletter curated for engineers who stand on the shoulders of giants</a>, or you just want to immortalize your worst commit message in a <a href="https://various-alternative-397011.framer.app/" rel="dofollow" target="_blank">community-driven hall of fame for git commits</a> — there's a home for every developer here.
+                </p>
+                <p>
+                    All of these projects are connected by the same belief: developers deserve content, tools, and humor that actually <em>gets</em> them. No fluff. No "10x developer" nonsense. Just real dev culture, built by people who have definitely pushed to production on a Friday and lived to tell the tale.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════ end ecosystem section -->
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -700,28 +994,15 @@
                 </div>
             </div>
 
-            <!-- Social Links - EDIT THESE URLs -->
             <div class="social-links">
                 <h3>Connect & Share the Laughs</h3>
                 <div class="social-icons">
-                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
-                        <span>𝕏</span>
-                    </a>
-                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
-                        <span>f</span>
-                    </a>
-                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
-                        <span>📷</span>
-                    </a>
-                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank" title="Reddit">
-                        <span>🤖</span>
-                    </a>
-                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
-                        <span>⚙</span>
-                    </a>
-                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
-                        <span>📌</span>
-                    </a>
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter"><span>𝕏</span></a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook"><span>f</span></a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram"><span>📷</span></a>
+                    <a href="https://reddit.com/r/ProgrammerHumor" class="social-icon" target="_blank" title="Reddit"><span>🤖</span></a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub"><span>⚙</span></a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest"><span>📌</span></a>
                 </div>
             </div>
 
